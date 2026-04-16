@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-zinc-300 font-sans tracking-tight;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
+  }
+}
+
+@layer utilities {
+  .liquid-glass {
+    @apply backdrop-blur-2xl bg-surface/50 border border-white/10;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 24px 48px -12px rgba(0,0,0,0.5);
+  }
+  .diffusion-shadow {
+    box-shadow: 0 24px 48px -12px rgba(0,0,0,0.5);
+  }
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+  .magnetic-btn:hover {
+    transform: scale(1.03) translateY(-1px);
+    box-shadow: 0 10px 30px -10px rgba(201, 168, 76, 0.4); /* Accent glow */
+  }
+  .text-drama {
+    @apply font-serif italic font-light tracking-wide text-accent;
+  }
+  
+  /* Utilities from Preset B/GEMINI.md requirements */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
